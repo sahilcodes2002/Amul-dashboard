@@ -113,7 +113,7 @@ const SustainabilityReports = () => {
               <kpi.icon className={`w-6 h-6 ${kpi.color} bg-opacity-20 rounded-full`} />
               <span className="text-sm font-semibold text-gray-700 truncate">{kpi.title}</span>
             </div>
-            <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1 truncate">{kpi.value}</div>
+            <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{kpi.value}</div>
             <div className={`text-xs font-semibold ${kpi.trend === 'up' ? 'text-green-600' : 'text-red-600'}`}>{kpi.change}</div>
           </div>
         ))}

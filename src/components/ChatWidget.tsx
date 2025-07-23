@@ -7,7 +7,7 @@ const mockMessages = [
 
 const watsonxLogo = (
   <img
-    src="/watsonx2.svg"
+    src={`${import.meta.env.BASE_URL}watsonx2.svg`}
     alt="watsonx Orchestrate Logo"
     className="h-6 w-auto ml-2"
     style={{ display: 'inline-block', verticalAlign: 'middle' }}
@@ -16,13 +16,14 @@ const watsonxLogo = (
 
 const ChatWidget = () => {
   const [open, setOpen] = useState(false);
+  const [input, setInput] = useState("");
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Chat Icon Button */}
       {!open && (
         <button
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg focus:outline-none transition-transform duration-200 hover:scale-105"
+          className="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg focus:outline-none transition-transform duration-200 hover:scale-105 opacity-60 hover:opacity-100 focus:opacity-100"
           onClick={() => setOpen(true)}
           aria-label="Open chat"
         >
@@ -34,7 +35,7 @@ const ChatWidget = () => {
       )}
       {/* Chat Window */}
       {open && (
-        <div className="w-80 max-w-[90vw] h-96 bg-white rounded-2xl shadow-2xl flex flex-col mt-4 overflow-hidden border border-gray-200 animate-fade-in transition-all duration-300">
+        <div className="w-96 max-w-[95vw] h-[32rem] bg-white rounded-2xl shadow-2xl flex flex-col mt-4 overflow-hidden border border-gray-200 animate-fade-in transition-all duration-300">
           <div className="flex items-center justify-between px-4 py-3 bg-blue-600 text-white">
             <div className="flex items-center gap-2">
             <span className="text-xs font-light opacity-60 flex items-center">{watsonxLogo}</span>
@@ -74,8 +75,9 @@ const ChatWidget = () => {
             <input
               type="text"
               className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all text-xs"
-              placeholder="Type a message... (demo only)"
-              disabled
+              placeholder="Type a message..."
+              value={input}
+              onChange={e => setInput(e.target.value)}
             />
           </div>
         </div>

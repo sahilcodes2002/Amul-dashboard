@@ -184,7 +184,7 @@ const Dashboard = () => {
             data={revenueData} 
             dataKey="revenue" 
             xAxisKey="month"
-            height={250}
+            height={350}
           />
         </div>
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4 md:p-6 overflow-x-auto w-full max-w-full">
@@ -196,7 +196,7 @@ const Dashboard = () => {
             type="pie" 
             data={productionData} 
             dataKey="value"
-            height={250}
+            height={350}
           />
         </div>
       </div>

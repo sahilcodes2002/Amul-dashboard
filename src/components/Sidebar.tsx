@@ -29,7 +29,7 @@ const Sidebar = () => {
       {/* Logo Section */}
       <div className="p-0 border-b border-gray-100 h-[74px] w-full flex items-center justify-center">
         <img
-          src="/image.png"
+          src={`${import.meta.env.BASE_URL}image.png`}
           alt="Amul Logo"
           className="h-20 w-auto object-contain"
           style={{ maxHeight: '80px', maxWidth: '95%', objectFit: 'contain', objectPosition: 'center' }}
