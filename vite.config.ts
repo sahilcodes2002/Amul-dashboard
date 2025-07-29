@@ -49,7 +49,6 @@ export default async function () {
       : [];
 
   return defineConfig({
-    base: "/Amul-dashboard/",
     plugins: [react(), runtimeErrorOverlay(), ...cartographerPlugin],
     resolve: {
       alias: {

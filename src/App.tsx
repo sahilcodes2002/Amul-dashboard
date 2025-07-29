@@ -8,25 +8,17 @@ import Dashboard from "@/pages/dashboard";
 import OperationalDashboard from "@/pages/operational-dashboard";
 import NotFound from "@/pages/not-found";
 
-// function Router() {
-//   return (
-//     <Switch>
-//       <Route path="/Amul-dashboard/" component={Dashboard} />
-//       {/* <Route path="/operational-dashboard" component={OperationalDashboard} /> */}
-//       <Route component={NotFound} />
-//     </Switch>
-//   );
-// }
+
 
 function Router() {
   return (
-    <WouterRouter base="/Amul-dashboard">
-      <Switch>
-        <Route path="/" component={Dashboard} />
-        {/* <Route path="/operational-dashboard" component={OperationalDashboard} /> */}
-        <Route component={NotFound} />
-      </Switch>
-    </WouterRouter>
+    <WouterRouter> {/* ✅ No base prop */}
+  <Switch>
+    <Route path="/" component={Dashboard} />
+    {/* <Route path="/operational-dashboard" component={OperationalDashboard} /> */}
+    <Route component={NotFound} />
+  </Switch>
+</WouterRouter>
   );
 }
 
